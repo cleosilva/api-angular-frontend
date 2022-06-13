@@ -1,1 +1,33 @@
-<p>curso works!</p>
+<!-- Formulário -->
+<div class="container form-group">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nome do Curso</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="curso.nomeCurso">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput2" class="form-label">Valor do Curso</label>
+    <input type="number" class="form-control" id="exampleFormControlInput2" [(ngModel)]="curso.valorCurso">
+  </div>
+  <div class="">
+    <button type="submit" class="btn btn-primary mb-3" (click)="cadastro()">Cadastrar</button>
+  </div>
+</div>
+<!-- Tabela de cursos -->
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome do Curso</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of vetor">
+      <th scope="row">{{v.idCurso}}</th>
+      <td> {{v.nomeCurso}} </td>
+      <td> {{v.valorCurso}} </td>
+      <td><button class="btn btn-primary" type="submit">Button</button><button class="btn btn-danger" type="submit">Button</button></td>
+    </tr>
+  </tbody>
+</table>
